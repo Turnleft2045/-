@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AudioDefination : MonoBehaviour
+{
+    public PlayAuidoEventSO playAuidoEvent;
+
+    public AudioClip audioClip;
+
+    public bool playOnEnable;
+
+    private void OnEnable()
+    {
+
+        if (playOnEnable)
+            PlayAudioClip();
+    }
+    public void PlayAudioClip()
+    {
+        playAuidoEvent.RaiseEvent(audioClip);
+    }
+
+}
